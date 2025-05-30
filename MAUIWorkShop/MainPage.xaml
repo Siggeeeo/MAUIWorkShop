@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MAUIWorkShop.MainPage">
+
+
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+            
+            <Image
+                Source="lampa.jpg"
+                HeightRequest="185"
+                Aspect="AspectFit" 
+            Opacity="0.5"/>
+
+            <Label
+                Text="Gissa ett tal!"
+                x:Name="WelcomeMsg"
+                FontSize ="20"
+                HorizontalOptions="Center"
+                 />
+
+            <BoxView
+                x:Name="Indikator"
+                HeightRequest="20"
+                WidthRequest="20"
+                CornerRadius="10"
+                HorizontalOptions="Center"
+                IsVisible="False"/>
+
+            <Label 
+            x:Name="Feedback"
+            FontSize="25"
+            TextColor="White"
+            HorizontalOptions="Center"
+            />
+            <Button 
+            x:Name="StartaOm"
+            Text="Spela igen"
+            IsVisible="False"
+            Clicked="OnReset" 
+                />
+
+            <Picker Title="Välj svårighetsgrad"
+                    x:Name="Picker"
+                    SelectedIndexChanged="Difficulty">
+
+                <Picker.Items>
+                    <x:String>1-25</x:String>
+                    <x:String>1-50</x:String>
+                    <x:String>1-100</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <Entry Placeholder="Skriv in ditt tal"
+                   x:Name="FeedMe"
+                   IsEnabled="False"/>
+
+
+            <Button
+                x:Name="GissaKnapp"
+                Text="Mata mig med ditt tal" 
+                Clicked="OnUserGuess"
+                HorizontalOptions="Fill" 
+                IsEnabled="False"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
