@@ -14,7 +14,7 @@
                 Source="lampa.jpg"
                 HeightRequest="185"
                 Aspect="AspectFit" 
-            Opacity="0.5"/>
+            Opacity="1"/>
 
             <Label
                 Text="Gissa ett tal!"
